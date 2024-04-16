@@ -47,9 +47,9 @@ DIV.CONV > DIV.C1 { grid-column: 1; }
 DIV.CONV > DIV.C2 { grid-column: 2; }
 </STYLE>
 <STYLE type="text/css">
-SP.I { background-color:#0a07ce; }
-SP.M { background-color:#9c2012; }
-SP.F { background-color:#f5b041; color:#000; }
+SP.I { background-color:#0a07ce; }  .TI { color:0a07ce;}
+SP.M { background-color:#9c2012; }  .TM { color:9c2012;}
+SP.F { background-color:#f5b041; color:#000; }  .TF { color:f5b041;}
 </STYLE>
 <TITLE>Nagy Tímea: Farkasszem</TITLE>
 </HEAD>
@@ -310,7 +310,7 @@ SP.F { background-color:#f5b041; color:#000; }
   var roles = {'I': 'IDŐS HÖLGY', 'F': 'FÉRFI', 'M': 'MAGN. NŐ'};
   document.body.innerHTML = (document.body.innerHTML
       .replaceAll(/<X>(.*?)<\/X>/gsi, '<audio controls><source src="$1.mp3" type="audio/mpeg"></audio>')
-      .replaceAll(/<S-([A-Z0-9])>(.*?)<\/S-\1>/gsi, function(m, p1, p2) { if (p1 == '0') return '<DIV CLASS=C2><SPAN CLASS=IUC>* ' + p2 + '</SPAN></DIV>'; p1 = p1.toUpperCase(); return '<DIV CLASS=C1>@' + p1 + '</DIV><DIV CLASS=C2>' + p2 + '</DIV>'; })
+        .replaceAll(/<S-([A-Z0-9])>(.*?)<\/S-\1>/gsi, function(m, p1, p2) { if (p1 == '0') return '<DIV CLASS=C2><SPAN CLASS=IUC>* ' + p2 + '</SPAN></DIV>'; p1 = p1.toUpperCase(); return '<DIV CLASS=C1>@' + p1 + '</DIV><DIV CLASS=C2><SPAN CLASS=T'+ p1 +'>' + p2 + '</SPAN></DIV>'; })
       .replaceAll(/@([A-Z0-9])/g, function(m, p1) { return '<SP CLASS=' + p1 + '>' + roles[p1] + '</SP>'; })
       );
 </SCRIPT>
